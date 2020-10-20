@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Basics</title>
+  </head>
+  <body>
+    <header>
+      <h1>Test despicable wtb page</h1>
+    </header>
+    <select class="dropDown">
+        <option value="test1" data-test="a">Test1</option>
+        <option value="test2" data-test="b">Test2</option>
+    </select>
+  </body>
+</html>
+
+<script>
+    jQuery(document).ready(function(e)
+    {
+        e(".dropDown").on('change',function(t)
+        {
+            var a = e(t.currentTarget);
+            var selectedInput = a.val();
+            console.log(selectedInput);
+            console.log(a.find('option[value="' + selectedInput + '"]').attr("data-test"));
+            var i = a.find('option[value="' + selectedInput + '"]').attr("data-test");
+            setTimeout(function(){ window.location = i +".html"; }, 5000);
+            
+        });
+    });
+   
+</script>
+
+
